@@ -1,59 +1,72 @@
-//1-5
-// function 함수(x :number) :number{
-//     return x * 2
-// }
+//1-6
 
-// 함수(30)
-
-// function 함수(x :number) :void {
-//     1 + 1
-// }
-
-// function 함수(x? :number) :void {
-//     1 + 1
-// }
-
-// function 함수(x :number | undefined) :void {
-//     1 + 1
-// }
-
-// function 함수(x :number | undefined) :void {
-//     if(x의 타입이 숫자면){
-//         console.log(x + 3);
+// function 함수(x :number | string){
+//     if(typeof x === 'string'){
+//         return x + '1'
+//     }else{
+//         return x + 1
 //     }
 // }
 
-//과제1
-function hello(x? :string){
-    if(x){
-        console.log('안녕하세요' + x)
-    } else {
-        console.log('이름이 없습니다')
-    }
+// 함수(2)
+
+function 함수(x :number | string){
+
+    let array :number[] = [];
+    // if(typeof x === 'number'){
+    //     array[0] = x;
+    // }else{
+
+    // }
+    array[0] = x as number;
 }
 
-hello('홍길동')
+
+함수(123)
+
+//과제1
+let array1 =  ['1', 2, '3'];
+
+
+function cleaning(x :(number | string)[]){    
+
+    let result :number[] = [];
+
+    x.forEach((y) =>{
+        if(typeof y === 'string'){
+            result.push(parseFloat(y))
+        }else{
+            result.push(y)
+        }
+    });
+
+    return result;
+}
+
+console.log(cleaning(array1));
 
 //과제2
-function count(x :number | string) :number{
-    return x.toString.length
-}
+let 철수쌤 = { subject : 'math' }
+let 영희쌤 = { subject : ['science', 'english'] }
+let 민수쌤 = { subject : ['science', 'art', 'korean'] }
 
-count('325')
+function 만들함수(x :{subject : string | string[]} ){
 
-//과제3
-function marry(money :number, house :boolean, charm :string) :string | void {
-    let score :number = 0;
-    score += money;
-    if(house === true){
-        score += 500
-    }
-    if(charm === '상'){
-        score += 500
-    }
-    if(score >= 600){
-        return '결혼가능'
+    if(typeof x.subject === 'string' ){
+        return x.subject
+    }else if(Array.isArray(x.subject) ){
+        return x.subject[x.subject.length -1]
+    }else{
+        return 'no'
     }
 }
 
-console.log(marry(100, true, '상'));
+
+만들함수( { subject : 'math' } )  //이 경우 'math'를 return
+만들함수( { subject : ['science', 'art', 'korean'] } ) //이 경우 'korean'을 return
+만들함수( { hello : 'hi' } )  //이 경우 타입에러 나면 됩니다 
+
+
+console.log(만들함수( { subject : 'math' } ))
+console.log(만들함수( { subject : ['science', 'art', 'korean'] } ))
+console.log(만들함수( { hello : 'hi' } ) )
