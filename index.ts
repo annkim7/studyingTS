@@ -1,72 +1,76 @@
-//1-6
+//1-7
 
-// function 함수(x :number | string){
-//     if(typeof x === 'string'){
-//         return x + '1'
-//     }else{
-//         return x + 1
-//     }
-// }
+// type Animal = string | number | undefined
 
-// 함수(2)
+// let 동물 :Animal = 'kim';
 
-function 함수(x :number | string){
+type AnimalType = { name : string, age : number }
 
-    let array :number[] = [];
-    // if(typeof x === 'number'){
-    //     array[0] = x;
-    // }else{
-
-    // }
-    array[0] = x as number;
+let 동물 :AnimalType = {
+    name : 'kim',
+    age : 20
 }
 
+type GirlFriend = {
+    readonly name : string
+}
 
-함수(123)
+const 여친 :GirlFriend = {
+    name : 'kim'
+}
+
+// 여친.name = 'park'
+
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+
+type PositionX = { x : number };
+type PositionY = { y : number };
+
+type NewType = PositionX & PositionY;
+
+let position :NewType = { x : 10, y : 20 }
 
 //과제1
-let array1 =  ['1', 2, '3'];
+type PositionX1 = { x : number };
+type PositionY1 = { x : number };
 
+type NewType1 = PositionX1 & PositionY1;
 
-function cleaning(x :(number | string)[]){    
-
-    let result :number[] = [];
-
-    x.forEach((y) =>{
-        if(typeof y === 'string'){
-            result.push(parseFloat(y))
-        }else{
-            result.push(y)
-        }
-    });
-
-    return result;
-}
-
-console.log(cleaning(array1));
+let position1 :NewType1 = { x : 10 }
 
 //과제2
-let 철수쌤 = { subject : 'math' }
-let 영희쌤 = { subject : ['science', 'english'] }
-let 민수쌤 = { subject : ['science', 'art', 'korean'] }
-
-function 만들함수(x :{subject : string | string[]} ){
-
-    if(typeof x.subject === 'string' ){
-        return x.subject
-    }else if(Array.isArray(x.subject) ){
-        return x.subject[x.subject.length -1]
-    }else{
-        return 'no'
-    }
+type MyType = {
+    color? : string,
+    size : number,
+    readonly position: number[]
 }
 
+//과제3
+type User = {
+    name : string,
+    phone : number,
+    email : string
+}
 
-만들함수( { subject : 'math' } )  //이 경우 'math'를 return
-만들함수( { subject : ['science', 'art', 'korean'] } ) //이 경우 'korean'을 return
-만들함수( { hello : 'hi' } )  //이 경우 타입에러 나면 됩니다 
+let userTest :User = {
+    name : 'kim',
+    phone : 333,
+    email :'aaa@gmail.com'
+}
 
+//과제4
+type Test = {
+    name : string,
+    number : number,
+    mail : string,
+    adult : boolean
+}
 
-console.log(만들함수( { subject : 'math' } ))
-console.log(만들함수( { subject : ['science', 'art', 'korean'] } ))
-console.log(만들함수( { hello : 'hi' } ) )
+let userTest1 :Test = {
+    name : 'kim',
+    number : 3333,
+    mail : 'ddd@gmail.com',
+    adult : false
+}
