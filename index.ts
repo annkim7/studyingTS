@@ -1,41 +1,59 @@
-//1-4
-let 회원 :(number |  string) = 123;
-let 회원들 :(number | string)[] = [1, '2',3];
-let 오브젝트 :{ a : string | number } = { a : '123' };
+//1-5
+// function 함수(x :number) :number{
+//     return x * 2
+// }
 
-let 이름 :any;
-이름 = 123;
-이름 = true;
-이름 = [];
+// 함수(30)
 
-let 이름1 :unknown;
-이름1 = 123;
-이름 = {};
+// function 함수(x :number) :void {
+//     1 + 1
+// }
 
-let 변수1 :string = 이름;
+// function 함수(x? :number) :void {
+//     1 + 1
+// }
 
-// let 나이 :string|number;
-// 나이+1; 안됨
+// function 함수(x :number | undefined) :void {
+//     1 + 1
+// }
 
-// let 나이 :unknown = 1;
-// 나이-1; 안됨
+// function 함수(x :number | undefined) :void {
+//     if(x의 타입이 숫자면){
+//         console.log(x + 3);
+//     }
+// }
 
 //과제1
-let user :string = 'kim';
-let age :undefined | number = undefined;
-let married :boolean = false; 
-let 철수 :(string|number|undefined|boolean)[] = [user, age, married];
+function hello(x? :string){
+    if(x){
+        console.log('안녕하세요' + x)
+    } else {
+        console.log('이름이 없습니다')
+    }
+}
+
+hello('홍길동')
 
 //과제2
-let 학교 : {
-    score : (number|boolean)[],
-    teacher : string,
-    friend : string|string[]
+function count(x :number | string) :number{
+    return x.toString.length
 }
-= {
-    score : [100, 97, 84],
-    teacher : 'Phil',
-    friend : 'John'
+
+count('325')
+
+//과제3
+function marry(money :number, house :boolean, charm :string) :string | void {
+    let score :number = 0;
+    score += money;
+    if(house === true){
+        score += 500
+    }
+    if(charm === '상'){
+        score += 500
+    }
+    if(score >= 600){
+        return '결혼가능'
+    }
 }
-학교.score[4] = false;
-학교.friend = ['Lee' , 학교.teacher]
+
+console.log(marry(100, true, '상'));
