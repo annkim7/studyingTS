@@ -1,76 +1,25 @@
-//1-7
+//1-8
+let 이름 :123;
+이름 = 123;
 
-// type Animal = string | number | undefined
+let 접니다:'대머리' | '솔로';
+접니다 = '대머리'
 
-// let 동물 :Animal = 'kim';
-
-type AnimalType = { name : string, age : number }
-
-let 동물 :AnimalType = {
-    name : 'kim',
-    age : 20
+function 함수(a :'hello') :1 | 0{
+    return 1
 }
 
-type GirlFriend = {
-    readonly name : string
+//과제
+function 함수1(a :'가위' | '바위' | '보') :('가위' | '바위' | '보')[]{
+    return ['가위']
 }
 
-const 여친 :GirlFriend = {
+var 자료 = {
     name : 'kim'
+} as const
+
+function 내함수(a :'kim'){
+
 }
 
-// 여친.name = 'park'
-
-type Name = string;
-type Age = number;
-type Person = Name | Age;
-
-type PositionX = { x : number };
-type PositionY = { y : number };
-
-type NewType = PositionX & PositionY;
-
-let position :NewType = { x : 10, y : 20 }
-
-//과제1
-type PositionX1 = { x : number };
-type PositionY1 = { x : number };
-
-type NewType1 = PositionX1 & PositionY1;
-
-let position1 :NewType1 = { x : 10 }
-
-//과제2
-type MyType = {
-    color? : string,
-    size : number,
-    readonly position: number[]
-}
-
-//과제3
-type User = {
-    name : string,
-    phone : number,
-    email : string
-}
-
-let userTest :User = {
-    name : 'kim',
-    phone : 333,
-    email :'aaa@gmail.com'
-}
-
-//과제4
-type Test = {
-    name : string,
-    number : number,
-    mail : string,
-    adult : boolean
-}
-
-let userTest1 :Test = {
-    name : 'kim',
-    number : 3333,
-    mail : 'ddd@gmail.com',
-    adult : false
-}
+내함수(자료.name)

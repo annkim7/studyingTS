@@ -1,21 +1,18 @@
-//1-7
-var 동물 = {
-    name: 'kim',
-    age: 20
-};
-var 여친 = {
+//1-8
+var 이름;
+이름 = 123;
+var 접니다;
+접니다 = '대머리';
+function 함수(a) {
+    return 1;
+}
+//과제
+function 함수1(a) {
+    return ['가위'];
+}
+var 자료 = {
     name: 'kim'
 };
-var position = { x: 10, y: 20 };
-var position1 = { x: 10 };
-var userTest = {
-    name: 'kim',
-    phone: 333,
-    email: 'aaa@gmail.com'
-};
-var userTest1 = {
-    name: 'kim',
-    number: 3333,
-    mail: 'ddd@gmail.com',
-    adult: false
-};
+function 내함수(a) {
+}
+내함수(자료.name);
