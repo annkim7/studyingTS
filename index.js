@@ -1,18 +1,20 @@
-//1-8
-var 이름;
-이름 = 123;
-var 접니다;
-접니다 = '대머리';
-function 함수(a) {
-    return 1;
-}
-//과제
-function 함수1(a) {
-    return ['가위'];
-}
-var 자료 = {
-    name: 'kim'
+//1-9
+(function () { return 10; });
+var 함수 = function (a) {
+    return 10;
 };
-function 내함수(a) {
+var 회원정보 = {
+    name: 'kim',
+    plusOne: function (a) {
+        return a + 1;
+    },
+    changeName: function () {
+    }
+};
+//회원정보.plusOne()
+function 함수1(a) {
+    a();
 }
-내함수(자료.name);
+function 함수2() {
+}
+함수1(함수2);
