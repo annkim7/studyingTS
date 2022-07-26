@@ -1,38 +1,27 @@
-//1-9
+//1-10
 
-type 함수타입 = (a :string) => number;
+// let 제목 = document.querySelector('#title');
+// if(제목 != null){
+//     제목.innerHTML = '반가워요'
+// }
+// if(제목 instanceof Element){
+//     제목.innerHTML = '반가워요'
+// }
 
-() => { return 10 }
+// let 제목 = document.querySelector('#title') as Element;
+// 제목.innerHTML = '반가워요'
 
-let 함수 :함수타입 = function (a){
-    return 10
+let 제목 = document.querySelector('#title');
+if(제목?.innerHTML != undefined){
+    제목.innerHTML = '반가워요'
 }
 
-type Member = {
-    name : string,
-    age : number,
-    plusOne : ( x : number ) => number,
-    changeName : () => void
+let 링크 = document.querySelector('.link');
+if(링크 instanceof HTMLAnchorElement){
+    링크.href="https://kakao.com"
 }
 
-
-let 회원정보 = {
-    name : 'kim',
-    plusOne(a){
-        return a + 1;
-    },
-    changeName : () =>{
-
-    }
-}
-
-//회원정보.plusOne()
-
-function 함수1(a){
-    a()
-}
-function 함수2(){
+let 버튼 = document.querySelector('#button');
+버튼?.addEventListener('click', function(){
     
-}
-
-함수1(함수2)
+})

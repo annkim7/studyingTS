@@ -1,20 +1,21 @@
-//1-9
-(function () { return 10; });
-var 함수 = function (a) {
-    return 10;
-};
-var 회원정보 = {
-    name: 'kim',
-    plusOne: function (a) {
-        return a + 1;
-    },
-    changeName: function () {
-    }
-};
-//회원정보.plusOne()
-function 함수1(a) {
-    a();
+//1-10
+// let 제목 = document.querySelector('#title');
+// if(제목 != null){
+//     제목.innerHTML = '반가워요'
+// }
+// if(제목 instanceof Element){
+//     제목.innerHTML = '반가워요'
+// }
+// let 제목 = document.querySelector('#title') as Element;
+// 제목.innerHTML = '반가워요'
+var 제목 = document.querySelector('#title');
+if ((제목 === null || 제목 === void 0 ? void 0 : 제목.innerHTML) != undefined) {
+    제목.innerHTML = '반가워요';
 }
-function 함수2() {
+var 링크 = document.querySelector('.link');
+if (링크 instanceof HTMLAnchorElement) {
+    링크.href = "https://kakao.com";
 }
-함수1(함수2);
+var 버튼 = document.querySelector('#button');
+버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener('click', function () {
+});
