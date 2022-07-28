@@ -1,66 +1,67 @@
-//1-13
-class Person{
-    //data :number = 0;
-    name :string;
-    constructor(a :string){
-        this.name = a;
-    }
+//1-14
 
-    함수(a :string){
-        console.log('안녕' + a);
-    }
+//type Square = { color :string, width :number }
+
+interface Square {
+    color :string,
+    width :number
 }
 
-//Person.prototype.함수 = function(){}
+let 네모 :Square = { color : 'red', width : 100 }
 
-let 사람1 = new Person('kim');
-let 사람2 = new Person('park');
+interface Student{
+    name :string;
+}
+// interface Student{
+//     score :number
+// }
 
-//console.log(사람1.data);
+interface Teacher extends Student{
+    age :number;
+}
 
-// console.log(사람1);
+let 학생 :Student = { name : 'kim' }
+let 선생 :Teacher = { name : 'kim', age : 20 }
 
-사람1.함수('kim')
+type Animal = { name :string }
+type Cat = { age : number } & Animal
+// type Cat = { name :number } & Animal
+
+// let 야옹이 :Cat = { name : 'kim' }
 
 //과제1
-class Car{
-    model :string;
-    price :number;
-    constructor(type :string, price :number){
-        this.model = type;
-        this.price = price;
-    }
-
-    tax() :number{
-        return this.price * 0.1
-    }
+interface A{
+    brand :string,
+    serialNumber :number,
+    model :string[]
 }
 
-let car1 = new Car('소나타', 3000)
-console.log(car1);
-console.log(car1.tax());
+let 상품 :A = { brand : 'Samsung', serialNumber : 1360, model : ['TV', 'phone'] }
 
 //과제2
-class Word{
-    num;
-    str;
-    constructor(...param){
-        let numbers :number[] = [];
-        let names :string[] = [];
-
-        param.forEach((i)=>{
-            if(typeof i === 'string'){
-                names.push(i)
-            }else{
-                numbers.push(i)
-            }
-        })
-
-        this.num = numbers;
-        this.str = names;
-    }
+interface Cart{
+    product :string,
+    price :number
 }
 
-let obj = new Word('kim', 3, 5, 'park');
-console.log(obj.num)
-console.log(obj.str)
+let 장바구니 :Cart[] = [ { product : '청소기', price : 7000 }, { product : '삼다수', price : 800 } ] 
+
+//과제3
+interface NewCart extends Cart{
+    card : boolean
+}
+
+//과제4
+interface C{
+    plus : (a :number, b :number) => number,
+    minus : (a :number, b :number) => number
+}
+
+let cal :C ={
+    plus(a,b){
+        return a+b
+    },
+    minus(a,b){
+        return a-b
+    }
+}
